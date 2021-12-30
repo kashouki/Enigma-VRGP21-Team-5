@@ -45,8 +45,12 @@ public class StoryController : MonoBehaviour
     {
 
         playerPos.transform.position = initPos.transform.position;
+<<<<<<< Updated upstream
         kingAnimation = king.GetComponent<DialogController>();
         dwarfAnimation = dwarf.GetComponent<DialogController>();
+=======
+        
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -54,8 +58,12 @@ public class StoryController : MonoBehaviour
     {
         Debug.Log(dwarfState);
         Vector3 player = playerCurrentPos.transform.position;
+<<<<<<< Updated upstream
         Debug.Log(Vector3.Distance(player, dwarfTrigger.transform.position));
 
+=======
+        //Debug.Log(player);
+>>>>>>> Stashed changes
         if (isPalace)
         {
             if (kingState == 0)
