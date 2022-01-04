@@ -30,11 +30,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FireMagicTrigger
+  - WindMagicTrigger
+  - Firewood
+  - FireMagic
+  - WindMagic
   - 
   - Spatial Awareness
   m_SortingLayers:

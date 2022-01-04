@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7143100347185323312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7143100347185323314}
+  - component: {fileID: 7143100347185323313}
+  m_Layer: 0
+  m_Name: GestureDetector_Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7143100347185323314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143100347185323312}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.041153, y: -0.15956497, z: 2.1919498}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7143100347185323313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143100347185323312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e932b323fbc15bf4ab135cc182f12d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.03
+  skeleton: {fileID: 0}
+  gestures:
+  - name: FireGesture
+    fingerDatas:
+    - {x: 0.00000079923973, y: -0.000001519826, z: 0.0000016486217}
+    - {x: 0.00000079923973, y: -0.000001519826, z: 0.0000016486217}
+    - {x: 0.02006964, y: 0.011551706, z: 0.010498628}
+    - {x: 0.03698087, y: 0.021426715, z: 0.025802234}
+    - {x: 0.052443728, y: 0.048178677, z: 0.035917915}
+    - {x: 0.07446318, y: 0.073753044, z: 0.037703067}
+    - {x: 0.09599701, y: 0.0073125735, z: 0.023554185}
+    - {x: 0.12840244, y: 0.024372486, z: 0.033422574}
+    - {x: 0.13646562, y: 0.047208544, z: 0.035491392}
+    - {x: 0.095647156, y: 0.0025436182, z: 0.0017259117}
+    - {x: 0.13729833, y: 0.012498484, z: -0.0012410422}
+    - {x: 0.15472446, y: 0.03381501, z: -0.0020491118}
+    - {x: 0.08869419, y: 0.0065269256, z: -0.017463174}
+    - {x: 0.123627566, y: 0.01520231, z: -0.032468118}
+    - {x: 0.13990922, y: 0.035750538, z: -0.03679578}
+    - {x: 0.03407527, y: 0.009416486, z: -0.022994904}
+    - {x: 0.077896096, y: 0.013687335, z: -0.035050943}
+    - {x: 0.09902899, y: 0.026131384, z: -0.053550836}
+    - {x: 0.10925485, y: 0.04180625, z: -0.061441362}
+    - {x: 0.08976, y: 0.09266426, z: 0.033864766}
+    - {x: 0.14087163, y: 0.06915324, z: 0.03511359}
+    - {x: 0.16124403, y: 0.05791973, z: -0.0010090215}
+    - {x: 0.1460872, y: 0.059194934, z: -0.034217086}
+    - {x: 0.11925081, y: 0.061214577, z: -0.06386603}
+    onDetected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Fire, Assembly-CSharp
+          m_MethodName: Burn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: WindGesture
+    fingerDatas:
+    - {x: -0.00000078796063, y: -0.000002508739, z: 0.0000014538675}
+    - {x: -0.00000078796063, y: -0.000002508739, z: 0.0000014538675}
+    - {x: 0.02006875, y: 0.011554592, z: 0.010495959}
+    - {x: 0.038074717, y: 0.024093399, z: 0.022168405}
+    - {x: 0.061630912, y: 0.045316886, z: 0.029343901}
+    - {x: 0.08460922, y: 0.057478927, z: 0.0077484967}
+    - {x: 0.09599545, y: 0.0073224967, z: 0.023546098}
+    - {x: 0.1326906, y: 0.016721027, z: 0.021689372}
+    - {x: 0.15598825, y: 0.023470344, z: 0.020135833}
+    - {x: 0.095646225, y: 0.0025458378, z: 0.0017238235}
+    - {x: 0.13634562, y: 0.01618467, z: 0.0023003481}
+    - {x: 0.16250178, y: 0.024834719, z: 0.0024294234}
+    - {x: 0.08869412, y: 0.006524056, z: -0.01746144}
+    - {x: 0.101614594, y: 0.043299723, z: -0.016127106}
+    - {x: 0.07613497, y: 0.046378445, z: -0.009236783}
+    - {x: 0.034073737, y: 0.009421618, z: -0.022999788}
+    - {x: 0.07789542, y: 0.013694319, z: -0.035056453}
+    - {x: 0.083295204, y: 0.04316657, z: -0.028280053}
+    - {x: 0.06523346, y: 0.045384895, z: -0.019258084}
+    - {x: 0.09428706, y: 0.061179418, z: -0.014584337}
+    - {x: 0.17712829, y: 0.03026644, z: 0.017272543}
+    - {x: 0.18654765, y: 0.03163293, z: 0.0020766805}
+    - {x: 0.06267265, y: 0.026326088, z: -0.005932906}
+    - {x: 0.04996043, y: 0.031362515, z: -0.012029553}
+    onDetected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Fire, Assembly-CSharp
+          m_MethodName: Burn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
