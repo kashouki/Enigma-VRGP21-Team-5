@@ -6,11 +6,30 @@ using UnityEngine.SceneManagement;
 public class changeScenes : MonoBehaviour
 {
     public int index;
-    private void OnTriggerEnter(Collider other)
+    public bool isTouched;
+
+    private void Start()
     {
-        if (other.CompareTag("Player"))
+        isTouched = false;
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && !isTouched)
         {
-            SceneManager.LoadScene(index);
+            isTouched = true;
+            Debug.Log("Swtich Scene");
+            StartCoroutine(LoadYourAsync());
+        }
+
+
+    }
+    IEnumerator LoadYourAsync()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
+
+        while (!asyncLoad.isDone)
+        { 
+            yield return null;
         }
     }
 }
