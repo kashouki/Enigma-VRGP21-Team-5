@@ -17,6 +17,7 @@ public class mygrabber : OVRGrabber
     //public GameObject normalHand;
     //private Renderer renderer;
     private OVRHand hand;
+    public detectPoke poke;
     public float pinchThreshold = 0.6f;
     public float holdThreshold = 0.5f;
     bool hold;
@@ -35,6 +36,11 @@ public class mygrabber : OVRGrabber
         //Debug.Log("Distance from potion : " + Vector3.Distance(potionPoison.transform.position, transform.position));
         //Debug.Log("Pinch: " + pinchStrength);
         //Debug.Log("Hold: " + hold);
+        if (poke.poked)
+        {
+            knifeHand.SetActive(false);
+            knife.SetActive(false);
+        }
         if (!hold && /*!m_grabbedObj && */ pinchStrength >= pinchThreshold /*&& m_grabCandidates.Count > 0*/)
         {
             //Debug.Log("in if");
@@ -56,7 +62,7 @@ public class mygrabber : OVRGrabber
                 GetComponent<OVRMeshRenderer>().enabled = false;
                 GetComponent<SkinnedMeshRenderer>().enabled = false;
             }
-            else if (holdThreshold > Vector3.Distance(knife.transform.position, transform.position))
+            else if (!poke.poked && holdThreshold > Vector3.Distance(knife.transform.position, transform.position))
             {
                 hold = true;
                 knifeHand.SetActive(true);
@@ -72,8 +78,11 @@ public class mygrabber : OVRGrabber
             potionPoison.SetActive(true);
             potionAntidoteHand.SetActive(false);
             potionAntidote.SetActive(true);
-            knifeHand.SetActive(false);
-            knife.SetActive(true);
+            if (!poke.poked)
+            {
+                knifeHand.SetActive(false);
+                knife.SetActive(true);
+            }
             GetComponent<OVRMeshRenderer>().enabled = true;
             GetComponent<SkinnedMeshRenderer>().enabled = true;
         }

@@ -6,6 +6,7 @@ public class detectPour : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform pot;
+    public bubble b;
     void Start()
     {
         GetComponent<ParticleSystem>().Stop();
@@ -20,6 +21,7 @@ public class detectPour : MonoBehaviour
         {
             Debug.Log("above pot & pour");
             GetComponent<ParticleSystem>().Play();
+            b.bubbling = true;
         }
         else
         {

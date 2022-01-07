@@ -5,9 +5,10 @@ using UnityEngine;
 public class detectPoke : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool poked;
     void Start()
     {
-        
+        poked = false;
     }
 
     // Update is called once per frame
@@ -17,6 +18,10 @@ public class detectPoke : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Poke");
+        if (other.name == "HorrorDoll")
+        {
+            Debug.Log("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPoke");
+            poked = true;
+        }
     }
 }
