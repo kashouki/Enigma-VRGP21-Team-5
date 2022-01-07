@@ -26,9 +26,19 @@ public class Fire : MonoBehaviour
 
             StartCoroutine(RightHandMagicCoroutine());
         }
+    }
 
+    public void Blow()
+    {
+        if (!isCastingMagic)
+        {
+            isCastingMagic = true;
+            collectParticle.Play();
+            magicSound.time = 1.0f;
+            magicSound.Play();
 
-
+            StartCoroutine(RightHandMagicCoroutine());
+        }
     }
 
 
@@ -46,4 +56,5 @@ public class Fire : MonoBehaviour
         isCastingMagic = false;
 
     }
+
 }

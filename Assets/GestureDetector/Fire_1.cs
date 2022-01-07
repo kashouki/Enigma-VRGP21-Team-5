@@ -8,6 +8,7 @@ public class Fire_1 : MonoBehaviour
     public GameObject capsule;
     public GameObject TutorialHands_1;
     public GameObject Wind_GestureDetector_Right;
+    public GameObject whirlMagic;
     private isInArea bool_script;
     [SerializeField] ParticleSystem collectParticle = null;
     [SerializeField] ParticleSystem collectParticle_2 = null;
@@ -39,11 +40,12 @@ public class Fire_1 : MonoBehaviour
             if (bool_script.isInTheArea == true)
             {
                 collectParticle_2.Play();
-                hasCastWind = true;
+                
                 // Turn off wind magic tutorial hand
                 TutorialHands_1.SetActive(false);
                 // Turn on right-hand wind magic
                 Wind_GestureDetector_Right.SetActive(true);
+                StartCoroutine(EscapeCoroutine());
             }
 
             StartCoroutine(WindCoroutine());
@@ -68,6 +70,15 @@ public class Fire_1 : MonoBehaviour
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(2);
         isCastingWind = false;
+
+    }
+
+    IEnumerator EscapeCoroutine()
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(5);
+        hasCastWind = true;
+        whirlMagic.SetActive(false);
 
     }
 
