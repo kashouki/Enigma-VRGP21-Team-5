@@ -13,28 +13,46 @@ public class Fire_1 : MonoBehaviour
     [SerializeField] ParticleSystem collectParticle_2 = null;
 
     public bool hasCastWind = false;
+    private bool isCastingWind = false;
+
+    private AudioSource WindSound;
 
     // Start is called before the first frame update
     void Start()
     {
         hand = GetComponent<OVRHand>();
         bool_script = capsule.GetComponent<isInArea>();
+
+        WindSound = GetComponent<AudioSource>();
+        WindSound.time = 1.0f;
     }
 
     public void Burn()
     {
-       collectParticle.Play();
-       // If in crow trap
-       if (bool_script.isInTheArea == true)
+        if (!isCastingWind)
         {
-            collectParticle_2.Play();
-            hasCastWind = true;
-            // Turn off wind magic tutorial hand
-            TutorialHands_1.SetActive(false);
-            // Turn on right-hand wind magic
-            Wind_GestureDetector_Right.SetActive(true);
+            isCastingWind = true;
+            collectParticle.Play();
+            WindSound.Play();
+
+            // If in crow trap
+            if (bool_script.isInTheArea == true)
+            {
+                collectParticle_2.Play();
+                hasCastWind = true;
+                // Turn off wind magic tutorial hand
+                TutorialHands_1.SetActive(false);
+                // Turn on right-hand wind magic
+                Wind_GestureDetector_Right.SetActive(true);
+            }
+
+            StartCoroutine(WindCoroutine());
+            
+            
         }
+
         
+
     }
 
 
@@ -42,8 +60,16 @@ public class Fire_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+    }
+
+    IEnumerator WindCoroutine()
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(2);
+        isCastingWind = false;
 
     }
 
-   
+
 }

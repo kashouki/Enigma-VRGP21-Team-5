@@ -10,11 +10,13 @@ public class FirewoodBurn : MonoBehaviour
     [SerializeField] ParticleSystem collectParticle = null;
     [SerializeField] ParticleSystem collectParticle_2 = null;
 
+    private AudioSource LoopingFireSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoopingFireSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class FirewoodBurn : MonoBehaviour
         {
             collectParticle.Play();
             isOnFire = true;
+            LoopingFireSound.Play();
         }
 
         if (other.gameObject.layer == 29 && isOnFire == true)
