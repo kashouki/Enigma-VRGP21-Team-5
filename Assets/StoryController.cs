@@ -62,6 +62,9 @@ public class StoryController : MonoBehaviour
 
     public GameObject trapDoor;
 
+    private bool waitKing = true;
+    private float kingTimer = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -99,7 +102,18 @@ public class StoryController : MonoBehaviour
             {
                 Debug.Log("In king");
                 //palaceBoundary[0].SetActive(false);
-                if (kingDiaCount != 0)
+                if (waitKing == true)
+                {
+                    if (timer <= 3)
+                    {
+                        timer += Time.deltaTime;
+                    }
+                    else
+                    {
+                        waitKing = false;
+                    }
+                }
+                else if (kingDiaCount != 0)
                 {
                     if (timer == 0)
                     {
