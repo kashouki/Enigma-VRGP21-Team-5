@@ -104,9 +104,9 @@ public class StoryController : MonoBehaviour
                 //palaceBoundary[0].SetActive(false);
                 if (waitKing == true)
                 {
-                    if (timer <= 3)
+                    if (timer <= 5)
                     {
-                        timer += Time.deltaTime;
+                        kingTimer += Time.deltaTime;
                     }
                     else
                     {
