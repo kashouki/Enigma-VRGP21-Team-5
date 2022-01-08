@@ -39,7 +39,6 @@ public class detectPoke : MonoBehaviour
             }
             else
                 Debug.Log("EEEEEEEEEEEEEEEEEEEEError");
-            StartCoroutine(LoadYourAsync(c.status));
         }
     }
     IEnumerator LoadYourAsync(int index)
