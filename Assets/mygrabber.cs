@@ -11,6 +11,8 @@ public class mygrabber : OVRGrabber
     public GameObject potionAntidote;
     public GameObject knifeHand;
     public GameObject knife;
+
+    public dip d;
     //
 
     //
@@ -82,6 +84,7 @@ public class mygrabber : OVRGrabber
             {
                 knifeHand.SetActive(false);
                 knife.SetActive(true);
+                d.dipping = false;
             }
             GetComponent<OVRMeshRenderer>().enabled = true;
             GetComponent<SkinnedMeshRenderer>().enabled = true;

@@ -6,7 +6,9 @@ public class detectPour : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform pot;
-    public bubble b;
+    //public bubble b;
+    public int type;
+    public cauidron c;
     void Start()
     {
         GetComponent<ParticleSystem>().Stop();
@@ -19,9 +21,10 @@ public class detectPour : MonoBehaviour
         Debug.Log(Mathf.Pow(pot.position.x - transform.position.x, 2) + Mathf.Pow(pot.position.z - transform.position.z, 2));
         if (Vector3.Dot(transform.forward, new Vector3(0, -1, 0)) > 0.3f && Mathf.Pow(pot.position.x - transform.position.x, 2) + Mathf.Pow(pot.position.z - transform.position.z, 2) < 0.2f)
         {
+            c.status = type;
             Debug.Log("above pot & pour");
             GetComponent<ParticleSystem>().Play();
-            b.bubbling = true;
+            //b.bubbling = true;
         }
         else
         {
